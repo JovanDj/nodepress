@@ -23,7 +23,9 @@
     "morgan": "^1.10.0",
     "objection": "^2.2.15",
     "objection-password": "^3.0.0",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "pug": "^3.0.2",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "^7.29.0",

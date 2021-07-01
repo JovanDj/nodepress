@@ -5,7 +5,6 @@ const { PORT } = process.env;
 const knex = require("knex");
 const knexFile = require("./knexfile");
 const { Model } = require("objection");
-const userRoutes = require("./routes/users");
 const cors = require("cors");
 const morgan = require("morgan");
 
@@ -14,8 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(cors());
+app.use(express.static("public"));
+app.set("view engine", "pug");
 
-app.use("/users", userRoutes);
+app.use("/", require("./routes/index"));
+app.use("/api/users", require("./api/users"));
 
 Model.knex(knex(knexFile.development));
 

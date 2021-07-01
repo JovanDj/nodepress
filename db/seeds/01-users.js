@@ -10,6 +10,7 @@ module.exports.seed = (knex) => {
         return {
           email: faker.internet.exampleEmail(),
           password: faker.internet.password(),
+          username: faker.internet.userName(),
         };
       });
 

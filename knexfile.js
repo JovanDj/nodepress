@@ -1,17 +1,14 @@
 require("dotenv").config();
 
 // Update with your config settings.
-const { POSTGRES_DB, POSTGRES_PASSWORD, POSTGRES_USER, DB_HOST } = process.env;
 const { knexSnakeCaseMappers } = require("objection");
 
 module.exports = {
   development: {
-    client: "pg",
+    client: "sqlite3",
+    useNullAsDefault: true,
     connection: {
-      database: POSTGRES_DB,
-      password: POSTGRES_PASSWORD,
-      host: DB_HOST,
-      user: POSTGRES_USER,
+      filename: "./mydb.sqlite",
     },
     migrations: {
       directory: "./db/migrations",

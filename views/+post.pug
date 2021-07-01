@@ -1,0 +1,7 @@
+mixin post(post)
+    article.blog-post
+        h2.blog-post-title= post.title
+        p.blog-post-meta= post.createdAt
+            |  by 
+            a(href='#')= post.author.username
+        section.content= post.content
