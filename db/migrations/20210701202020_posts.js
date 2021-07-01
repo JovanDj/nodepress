@@ -6,6 +6,7 @@ module.exports.up = (knex) => {
     table.integer("author_id");
 
     table.foreign("author_id").references("user_id").inTable("users");
+    table.foreign("post_id").references("post_id").inTable("posts_categories");
 
     table.timestamps(true, true);
   });

@@ -8,7 +8,7 @@ module.exports = {
     client: "sqlite3",
     useNullAsDefault: true,
     connection: {
-      filename: "./mydb.sqlite",
+      filename: "./nodepress.sqlite",
     },
     migrations: {
       directory: "./db/migrations",
